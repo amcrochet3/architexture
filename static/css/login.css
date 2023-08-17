@@ -118,12 +118,6 @@ body {
     margin-left: 20px;
 }
 
-.success-message {
-    color: var(--color_type_2);
-    font-family: "IBM Plex Mono";
-    margin-left: 20px;
-}
-
 .login-button {
     bottom: 14.7vh;
     cursor: pointer;

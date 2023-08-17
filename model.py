@@ -41,8 +41,6 @@ class User(db.Model):
     __tablename__ = "users"
 
     user_id = db.Column(db.Integer, primary_key=True, autoincrement=True, unique=True)
-    fname = db.Column(db.String(100))
-    lname = db.Column(db.String(100))
     email = db.Column(db.String(100), unique=True)
     password = db.Column(db.String(100))
     admin_status = db.Column(db.Boolean)

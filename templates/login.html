@@ -29,16 +29,6 @@
             </div>
             {% endfor %}
         </div>
-
-        <script>
-            const successMessage = document.querySelectorAll(".success-message");
-
-            if (successMessage.length > 0) {
-                setTimeout(function () {
-                    window.location.href = '/dashboard';
-                }, 1000);
-            }
-        </script>
         {% endif %}
 
         <form action="/login" method="POST">
