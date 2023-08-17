@@ -1,0 +1,147 @@
+/* Define variables */
+
+:root {
+    --bg_color_type_0: rgb(0, 0, 0);
+    --bg_color_type_1: rgb(255, 255, 255);
+    --color_type_0: rgb(0, 0, 0);
+    --color_type_1: rgb(255, 0, 0);
+    --color_type_2: rgb(34, 139, 34);
+    --padding_type_0: undefinedpx undefinedpx undefinedpx undefinedpx;
+}
+
+
+/* Apply styles */
+
+body {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.main {
+    background-color: var(--bg_color_type_1);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: var(--padding_type_0);
+    position: relative;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    position: relative;
+}
+
+.back-button {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    gap: 1vh;
+    height: 6.5vh;
+    justify-content: center;
+    margin-top: 20px;
+    width: 200px;
+}
+
+.login-heading {
+    color: var(--color_type_0);
+    flex-shrink: 0;
+    font-family: Urbanist;
+    font-size: 15.3vh;
+    font-style: normal;
+    font-weight: 700;
+    height: 68vh;
+    line-height: normal;
+    margin-left: 0;
+    transform: rotate(-90deg);
+    width: 543px;
+}
+
+.instructions-box {
+    height: 16.5vh;
+    left: 121.8vh;
+    position: absolute;
+    top: 7.6vh;
+    width: 83.2vh;
+}
+
+.login-instructions {
+    color: var(--color_type_0);
+    flex-shrink: 0;
+    font-family: IBM Plex Mono;
+    font-size: 4.2vh;
+    font-style: normal;
+    font-weight: 200;
+    height: 14.9vh;
+    line-height: normal;
+    width: 83.2vh;
+}
+
+.email-input {
+    background-color: var(--bg_color_type_1);
+    bottom: 51.2vh;
+    height: 6.2vh;
+    left: 121.8vh;
+    outline: 1px solid rgb(0, 0, 0);
+    outline-offset: -1px;
+    position: absolute;
+    right: 16.6vh;
+    top: 35vh;
+    width: 66.6vh;
+}
+
+.password-input {
+    background-color: var(--bg_color_type_1);
+    bottom: 39.5vh;
+    height: 6.2vh;
+    left: 121.8vh;
+    outline: 1px solid rgb(0, 0, 0);
+    outline-offset: -1px;
+    position: absolute;
+    right: 16.6vh;
+    top: 45.7vh;
+    width: 66.6vh;
+}
+
+.flash-messages {
+    position: absolute;
+    top: 57vh;
+    left: 118.8vh;
+}
+
+.flash-message {
+    color: var(--color_type_1);
+    font-family: "IBM Plex Mono";
+    margin-left: 20px;
+}
+
+.success-message {
+    color: var(--color_type_2);
+    font-family: "IBM Plex Mono";
+    margin-left: 20px;
+}
+
+.login-button {
+    bottom: 14.7vh;
+    cursor: pointer;
+    height: 14.8vh;
+    left: 155.8vh;
+    object-fit: cover;
+    position: absolute;
+    right: 6.7vh;
+    top: 72.9vh;
+    width: 43.7vh;
+}
+
+.line {
+    background-color: var(--bg_color_type_0);
+    bottom: 9.5vh;
+    height: 0.1vh;
+    left: 121.8vh;
+    position: absolute;
+    right: 0;
+    top: 92.8vh;
+}
