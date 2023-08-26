@@ -13,13 +13,22 @@
 {% endblock %}
 
 {% block body %}
-<main class="login main">
+<main class="main">
     <section class="section">
-        <img class="back-button" src="/static/img/back-arrow.svg">
+        <a href="/"><img class="back-button" src="/static/img/back-arrow.svg"></a>
+
         <h1 class="login-heading">user login</h1>
+
         <span class="instructions-box">
             <p class="login-instructions">Log into your <i>architexture</i> account below with your credentials.</p>
         </span>
+
+        <form action="/login" method="POST">
+            <input class="email-input" type="email" name="email" placeholder="email" required>
+            <input class="password-input" type="password" name="password" placeholder="password" required>
+            <button type="submit"><img class="login-button" src="/static/img/login-arrow.svg" /></button>
+        </form>
+
         <div class="flash-container"></div>
         {% if messages %}
         <div class="flash-messages">
@@ -31,11 +40,6 @@
         </div>
         {% endif %}
 
-        <form action="/login" method="POST">
-            <input class="email-input" type="email" name="email" placeholder="email" required>
-            <input class="password-input" type="password" name="password" placeholder="password" required>
-            <button type="submit"><img class="login-button" src="/static/img/login-arrow.svg" /></button>
-        </form>
         <hr class="line" size="1" />
     </section>
 </main>

@@ -10,15 +10,23 @@ app.jinja_env.undefined = StrictUndefined
 
 
 
+#index
 @app.route('/')
 def index():
+
+    if "email" in session and "user_id" in session:
+        return redirect(f'/dashboard/{session["user_id"]}')
 
     return render_template("index.html")
 
 
+#user registration
 @app.route('/registration', methods=['GET', 'POST'])
 def registration():
     messages = get_flashed_messages()
+
+    if "email" in session and "user_id" in session:
+        return redirect(f'/dashboard/{session["user_id"]}')
 
     if request.method == 'POST':
         email = request.form.get("email")
@@ -37,9 +45,13 @@ def registration():
     return render_template("registration.html", messages=messages)
 
 
+#user login
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     messages = get_flashed_messages()
+
+    if "email" in session and "user_id" in session:
+        return redirect(f'/dashboard/{session["user_id"]}')
 
     if request.method == 'POST':
         email = request.form.get("email")
@@ -47,13 +59,33 @@ def login():
 
         user = crud.get_user_by_email(email)
 
-        if user:
-            return redirect('/dashboard')
-        else:
-            flash("Invalid email or password. Try again.")
-            return redirect('/login')
+        while user:
+            if email == user.email and password == user.password:
+                session["email"] = user.email
+                session["user_id"] = user.user_id
+                return redirect(f'/dashboard/{user.user_id}')
+            else:
+                flash("Invalid email or password. Try again.")
+                return redirect('/login')
 
     return render_template("login.html", messages=messages)
+
+
+#user logout
+@app.route('/logout', methods=['POST'])
+def logout():
+
+    session.clear()
+    return redirect('/')
+
+
+#unique user dashboard
+@app.route('/dashboard/<user_id>')
+def dashboard(user_id):
+
+    user = crud.get_user_by_id(user_id)
+
+    return render_template("dashboard.html", user=user)
 
 
 

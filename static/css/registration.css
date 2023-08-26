@@ -36,6 +36,7 @@ body {
 
 .back-button {
     align-items: center;
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     flex-shrink: 0;
@@ -106,6 +107,18 @@ body {
     width: 66.6vh;
 }
 
+.sign-up-button {
+    bottom: 14.7vh;
+    cursor: pointer;
+    height: 14.8vh;
+    left: 155.8vh;
+    object-fit: cover;
+    position: absolute;
+    right: 6.7vh;
+    top: 72.9vh;
+    width: 43.7vh;
+}
+
 .flash-messages {
     left: 118.8vh;
     position: absolute;
@@ -122,18 +135,6 @@ body {
     color: var(--color_type_2);
     font-family: "IBM Plex Mono";
     margin-left: 20px;
-}
-
-.sign-up-button {
-    bottom: 14.7vh;
-    cursor: pointer;
-    height: 14.8vh;
-    left: 155.8vh;
-    object-fit: cover;
-    position: absolute;
-    right: 6.7vh;
-    top: 72.9vh;
-    width: 43.7vh;
 }
 
 .line {

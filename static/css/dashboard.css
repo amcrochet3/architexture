@@ -1,0 +1,120 @@
+/* Define variable */
+
+:root {
+    --bg-color-type-0: rgb(0, 0, 0);
+    --bg-color-type-1: rgb(54, 57, 59);
+    --bg-color-type-2: rgb(249, 220, 92);
+    --bg-color-type-3: rgb(158, 216, 219);
+    --bg-color-type-4: rgb(255, 128, 37);
+    --bg-color-type-5: rgb(40, 167, 69);
+    --bg-color-type-6: rgb(158, 215, 171);
+    --color-type-0: rgb(255, 255, 255);
+    --color-type-1: rgb(40, 167, 69);
+    --color-type-2: rgb(0, 0, 0);
+    --color-type-3: rgb(255, 128, 37);
+}
+
+
+/* Apply styles */
+
+body {
+    font-family: "Urbanist", sans-serif;
+    margin: 0;
+}
+
+.navbar {
+    align-items: center;
+    color: var(--color-type-2);
+    display: flex;
+    height: 85px;
+    justify-content: center;
+    position: relative;
+}
+
+.navbar-heading {
+    font-family: "Urbanist", sans-serif;
+    font-size: 53px;
+    margin: 0;
+    padding-right: 20px;
+}
+
+.line {
+    background-color: var(--bg-color-type-0);
+    left: calc(50% - 450px);
+    position: absolute;
+    top: 55%;
+    transform: translateY(-50%);
+    width: 1205px;
+}
+
+.navbar-links {
+    display: flex;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 25px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.navbar-links li {
+    margin-left: 50px;
+}
+
+.navbar-links a {
+    color: var(--color-type-2);
+}
+
+.navbar-links a:hover {
+    color: var(--color-type-3);
+    text-decoration: none;
+}
+
+.panel {
+    align-items: flex-start;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    height: 44vh;
+    margin: 0;
+    padding: 20px;
+    text-align: left;
+    width: 100%;
+}
+
+.panel-heading {
+    font-family: "Urbanist", sans-serif;
+}
+
+.panel-body {
+    font-family: "IBM Plex Mono", serif;
+}
+
+.panel-dark {
+    background-color: var(--bg-color-type-1);
+    color: var(--color-type-0);
+}
+
+.panel-light {
+    background-color: var(--bg-color-type-2);
+}
+
+.panel-blue {
+    background-color: var(--bg-color-type-3);
+}
+
+.panel-orange {
+    background-color: var(--bg-color-type-4);
+    color: var(--color-type-0);
+}
+
+.row {
+    display: flex;
+}
+
+.col {
+    margin: 0;
+}
