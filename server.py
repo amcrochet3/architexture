@@ -10,10 +10,21 @@ app.jinja_env.undefined = StrictUndefined
 
 
 
+#helper functions
+def get_current_user():
+    user_id = session.get("user_id")
+
+    if user_id:
+        user = crud.get_user_by_id(user_id)
+    else:
+        user = None
+    
+    return user
+
+
 #index
 @app.route('/')
 def index():
-
     if "email" in session and "user_id" in session:
         return redirect(f'/dashboard/{session["user_id"]}')
 
@@ -74,18 +85,35 @@ def login():
 #user logout
 @app.route('/logout', methods=['POST'])
 def logout():
-
     session.clear()
+
     return redirect('/')
 
 
 #unique user dashboard
-@app.route('/dashboard/<user_id>')
+@app.route('/dashboard/<user_id>', methods=["GET"])
 def dashboard(user_id):
-
     user = crud.get_user_by_id(user_id)
 
     return render_template("dashboard.html", user=user)
+
+
+#structure library
+@app.route('/library', methods=["GET"])
+def library():
+    user = get_current_user()
+    structures = crud.get_all_structures()
+    
+    return render_template("library.html", user=user, structures=structures)
+
+
+#structure details
+@app.route('/structure-details/<structure_id>', methods=["GET"])
+def structure_details(structure_id):
+    user = get_current_user()
+    structure = crud.get_structure_by_id(structure_id)
+
+    return render_template("structure-details.html", user=user, structure=structure)
 
 
 

@@ -1,0 +1,483 @@
+:root {
+    --color-type-0: rgb(0, 0, 0);
+    --bg-color-type-0: rgb(0, 0, 0);
+    --bg-color-type-1: rgb(255, 255, 255);
+    --font-type-0: 400 60px/1.2 "Urbanist", Helvetica, Arial, serif;
+    --font-type-1: italic 500 30px/1.2 "Urbanist", Helvetica, Arial, serif;
+    --font-type-2: 700 30px/1.2 "Urbanist", Helvetica, Arial, serif;
+    --font-type-3: 200 25px/1.32 "IBM Plex Mono", Helvetica, Arial, serif;
+    --font-type-4: 100 25px/1.32 "IBM Plex Mono", Helvetica, Arial, serif;
+    --font-type-5: 200 18px/1.27 "IBM Plex Mono", Helvetica, Arial, serif;
+    --padding-type-0: undefinedpx undefinedpx undefinedpx undefinedpx;
+}
+
+.navbar {
+    align-items: center;
+    color: var(--color-type-0);
+    display: flex;
+    height: 85px;
+    justify-content: center;
+    position: relative;
+}
+
+.navbar-heading {
+    font-family: "Urbanist", sans-serif;
+    font-size: 53px;
+    margin: 0;
+    padding-right: 20px;
+}
+
+.line {
+    background-color: var(--bg-color-type-0);
+    left: calc(50% - 450px);
+    position: absolute;
+    top: 55%;
+    transform: translateY(-50%);
+    width: 1205px;
+}
+
+.navbar-links {
+    display: flex;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 25px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.navbar-links li {
+    margin-left: 50px;
+}
+
+.navbar-links a {
+    color: var(--color-type-0);
+}
+
+.navbar-links a:hover {
+    color: var(--color-type-1);
+    text-decoration: none;
+}
+
+.library-details {
+    &.main {
+        background-color: var(--bg-color-type-1);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        padding: var(--padding-type-0);
+        position: relative;
+    }
+
+    .section1 {
+        display: flex;
+        flex-direction: column;
+        min-height: 1700px;
+        position: relative;
+    }
+
+    .line {
+        background-color: var(--bg-color-type-0);
+        bottom: 1584px;
+        height: 1px;
+        left: 0px;
+        position: absolute;
+        right: 0px;
+        top: 115px;
+    }
+
+    .medium_title {
+        bottom: 1590px;
+        color: var(--color-type-0);
+        font: var(--font-type-3);
+        height: 33px;
+        left: 1248px;
+        letter-spacing: 0px;
+        position: absolute;
+        right: 87px;
+        top: 77px;
+        width: 105px;
+    }
+
+    .medium_title1 {
+        bottom: 1590px;
+        color: var(--color-type-0);
+        font: var(--font-type-3);
+        height: 33px;
+        left: 1111px;
+        letter-spacing: 0px;
+        position: absolute;
+        right: 239px;
+        top: 77px;
+        width: 90px;
+    }
+
+    .medium_title2 {
+        bottom: 1590px;
+        color: var(--color-type-0);
+        font: var(--font-type-3);
+        height: 33px;
+        left: 974px;
+        letter-spacing: 0px;
+        position: absolute;
+        right: 376px;
+        top: 77px;
+        width: 90px;
+    }
+
+    .medium_title3 {
+        bottom: 1590px;
+        color: var(--color-type-0);
+        font: var(--font-type-3);
+        height: 33px;
+        left: 882px;
+        letter-spacing: 0px;
+        position: absolute;
+        right: 513px;
+        top: 77px;
+        width: 45px;
+    }
+
+    .medium_title4 {
+        bottom: 1590px;
+        color: var(--color-type-0);
+        font: var(--font-type-3);
+        height: 33px;
+        left: 728px;
+        letter-spacing: 0px;
+        position: absolute;
+        right: 605px;
+        top: 77px;
+        width: 107px;
+    }
+
+    .medium_title5 {
+        bottom: 1590px;
+        color: var(--color-type-0);
+        font: var(--font-type-3);
+        height: 33px;
+        left: 546px;
+        letter-spacing: 0px;
+        position: absolute;
+        right: 759px;
+        top: 77px;
+        width: 135px;
+    }
+
+    .medium_title11 {
+        bottom: 1634px;
+        color: var(--color-type-0);
+        font: var(--font-type-4);
+        height: 33px;
+        left: 99px;
+        letter-spacing: 0px;
+        position: absolute;
+        right: 1280px;
+        top: 33px;
+        width: 61px;
+    }
+
+    .image {
+        bottom: 1620px;
+        height: 24px;
+        left: 63px;
+        object-fit: cover;
+        position: absolute;
+        right: 1243px;
+        top: 56px;
+        width: 134px;
+    }
+
+    .main-img {
+        border-color: var(--color-type-0);
+        border-style: solid;
+        border-width: 1px 0px 1px 1px;
+        bottom: 1052px;
+        height: 474px;
+        left: 712px;
+        object-fit: cover;
+        position: absolute;
+        right: 0px;
+        top: 60px;
+        width: 728px;
+    }
+
+    .hero_title {
+        bottom: 1038px;
+        color: var(--color-type-0);
+        font: var(--font-type-0);
+        height: 72px;
+        left: 144px;
+        letter-spacing: 0px;
+        position: absolute;
+        right: 827px;
+        top: 477px;
+        width: 469px;
+    }
+
+    .image2 {
+        bottom: 1054px;
+        height: 38px;
+        left: 63px;
+        object-fit: cover;
+        position: absolute;
+        right: 1325px;
+        top: 493px;
+        width: 52px;
+    }
+
+    .line1 {
+        background-color: var(--bg-color-type-0);
+        bottom: 993px;
+        height: 1px;
+        left: 0px;
+        position: absolute;
+        right: 0px;
+        top: 600px;
+    }
+
+    .rect {
+        background-color: var(--bg-color-type-0);
+        bottom: 0px;
+        height: 1085px;
+        left: 720px;
+        position: absolute;
+        right: 719px;
+        top: 618px;
+        width: 1px;
+    }
+
+    .highlight {
+        bottom: 584px;
+        color: var(--color-type-0);
+        font: var(--font-type-5);
+        height: 276px;
+        left: 792px;
+        letter-spacing: 0px;
+        position: absolute;
+        right: 90px;
+        text-align: justify;
+        top: 840px;
+        width: 558px;
+    }
+
+    .title {
+        bottom: 901px;
+        color: var(--color-type-0);
+        font: var(--font-type-1);
+        height: 36px;
+        left: 792px;
+        letter-spacing: 0px;
+        position: absolute;
+        right: 90px;
+        top: 763px;
+        width: 558px;
+    }
+
+    .line2 {
+        background-color: var(--bg-color-type-0);
+        bottom: 894px;
+        height: 1px;
+        left: 0px;
+        position: absolute;
+        right: 820px;
+        top: 805px;
+        width: 720px;
+    }
+
+    .line3 {
+        background-color: var(--bg-color-type-0);
+        bottom: 795px;
+        height: 1px;
+        left: 0px;
+        position: absolute;
+        right: 820px;
+        top: 904px;
+        width: 720px;
+    }
+
+    .line4 {
+        background-color: var(--bg-color-type-0);
+        bottom: 696px;
+        height: 1px;
+        left: 0px;
+        position: absolute;
+        right: 820px;
+        top: 1003px;
+        width: 720px;
+    }
+
+    .line5 {
+        background-color: var(--bg-color-type-0);
+        bottom: 597px;
+        height: 1px;
+        left: 0px;
+        position: absolute;
+        right: 820px;
+        top: 1102px;
+        width: 720px;
+    }
+
+    .line6 {
+        background-color: var(--bg-color-type-0);
+        bottom: 498px;
+        height: 1px;
+        left: 0px;
+        position: absolute;
+        right: 820px;
+        top: 1201px;
+        width: 720px;
+    }
+
+    .location-title {
+        bottom: 899px;
+        color: var(--color-type-0);
+        font: var(--font-type-2);
+        height: 36px;
+        left: 25px;
+        letter-spacing: 0px;
+        position: absolute;
+        right: 1308px;
+        text-align: justify;
+        top: 765px;
+        width: 107px;
+    }
+
+    .style-title {
+        bottom: 800px;
+        color: var(--color-type-0);
+        font: var(--font-type-2);
+        height: 36px;
+        left: 25px;
+        letter-spacing: 0px;
+        position: absolute;
+        right: 1351px;
+        text-align: justify;
+        top: 864px;
+        width: 64px;
+    }
+
+    .year-built-title {
+        bottom: 701px;
+        color: var(--color-type-0);
+        font: var(--font-type-2);
+        height: 36px;
+        left: 25px;
+        letter-spacing: 0px;
+        position: absolute;
+        right: 1201px;
+        text-align: justify;
+        top: 963px;
+        width: 214px;
+    }
+
+    .architect-title {
+        bottom: 602px;
+        color: var(--color-type-0);
+        font: var(--font-type-2);
+        height: 36px;
+        left: 25px;
+        letter-spacing: 0px;
+        position: absolute;
+        right: 1294px;
+        text-align: justify;
+        top: 1062px;
+        width: 121px;
+    }
+
+    .type-title {
+        bottom: 504px;
+        color: var(--color-type-0);
+        font: var(--font-type-2);
+        height: 36px;
+        left: 25px;
+        letter-spacing: 0px;
+        position: absolute;
+        right: 1352px;
+        text-align: justify;
+        top: 1160px;
+        width: 63px;
+    }
+
+    .location-info {
+        bottom: 900px;
+        color: var(--color-type-0);
+        font: var(--font-type-3);
+        height: 33px;
+        left: 393px;
+        letter-spacing: 0px;
+        position: absolute;
+        right: 745px;
+        top: 767px;
+        width: 302px;
+    }
+
+    .architect-info {
+        bottom: 602px;
+        color: var(--color-type-0);
+        font: var(--font-type-3);
+        height: 33px;
+        left: 393px;
+        letter-spacing: 0px;
+        position: absolute;
+        right: 792px;
+        top: 1065px;
+        width: 255px;
+    }
+
+    .type-info {
+        bottom: 505px;
+        color: var(--color-type-0);
+        font: var(--font-type-3);
+        height: 33px;
+        left: 393px;
+        letter-spacing: 0px;
+        position: absolute;
+        right: 882px;
+        top: 1162px;
+        width: 165px;
+    }
+
+    .style-info {
+        bottom: 800px;
+        color: var(--color-type-0);
+        font: var(--font-type-3);
+        height: 33px;
+        left: 393px;
+        letter-spacing: 0px;
+        position: absolute;
+        right: 912px;
+        top: 867px;
+        width: 135px;
+    }
+
+    .year-built-info {
+        bottom: 701px;
+        color: var(--color-type-0);
+        font: var(--font-type-3);
+        height: 33px;
+        left: 393px;
+        letter-spacing: 0px;
+        position: absolute;
+        right: 987px;
+        top: 966px;
+        width: 60px;
+    }
+
+    .secondary-img {
+        border-color: var(--color-type-0);
+        border-style: solid;
+        border-width: 1px 0px 0px 1px;
+        bottom: 0px;
+        height: 400px;
+        left: 100px;
+        object-fit: cover;
+        position: absolute;
+        right: 720px;
+        top: 1300px;
+        width: 620px;
+    }
+}
