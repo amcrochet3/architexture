@@ -122,8 +122,8 @@
         "img_path2": "/static/img/structures/Sydney Opera House 2.jpg",
         "lat": -33.85657945272001,
         "lng": 151.21528596743514,
-        "header": "",
-        "summary": ""
+        "header": "Sails on the Harbour",
+        "summary": "The Sydney Opera House, with its iconic silhouette resembling sails on the water, stands as an architectural masterpiece on the shores of Sydney Harbour. Designed by Jørn Utzon and opened in 1973, this UNESCO World Heritage Site is celebrated for its innovative design and engineering marvel. The building's distinctive roof, composed of interlocking shell-like panels, creates a visually stunning effect, mirroring the fluidity of the sea and sky. As a premier venue for the performing arts, it hosts a myriad of events, from opera to theatre, embodying the cultural heartbeat of Sydney. The Opera House is not just an architectural wonder but a symbol of Australia's creative and adventurous spirit."
     },
     {
         "name": "Habitat 67",
@@ -140,8 +140,8 @@
         "img_path2": "/static/img/structures/Habitat 67 2.jpg",
         "lat": 45.49999701002117,
         "lng": -73.54373416108785,
-        "header": "Sails on the Harbour",
-        "summary": "The Sydney Opera House, with its iconic silhouette resembling sails on the water, stands as an architectural masterpiece on the shores of Sydney Harbour. Designed by Jørn Utzon and opened in 1973, this UNESCO World Heritage Site is celebrated for its innovative design and engineering marvel. The building's distinctive roof, composed of interlocking shell-like panels, creates a visually stunning effect, mirroring the fluidity of the sea and sky. As a premier venue for the performing arts, it hosts a myriad of events, from opera to theatre, embodying the cultural heartbeat of Sydney. The Opera House is not just an architectural wonder but a symbol of Australia's creative and adventurous spirit."
+        "header": "Architectural Innovation Unleashed",
+        "summary": "Habitat 67, nestled in the vibrant city of Montreal, is an iconic example of experimental architectural design. Conceived by architect Moshe Safdie for Expo 67, this unique residential complex revolutionized the concept of urban living with its interlocking concrete forms and terraced design. Its futuristic, modular structure challenged conventional apartment living, offering private gardens and stunning views in a dense urban setting. Habitat 67 not only remains a significant architectural landmark but also continues to inspire with its visionary approach to harmonizing community living with individual space in the urban landscape."
     },
     {
         "name": "Jepson Center for the Arts",
@@ -185,7 +185,7 @@
         "style": "modernist",
         "year_built": 2020,
         "architect": null,
-        "firm": "LundHagem",
+        "firm": "Lundhagem",
         "street": "2 C. Sundts Street",
         "city": "Oslo",
         "state": null,

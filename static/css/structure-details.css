@@ -1,5 +1,6 @@
 :root {
     --color-type-0: rgb(0, 0, 0);
+    --color-type-1: rgb(255, 128, 37);
     --bg-color-type-0: rgb(0, 0, 0);
     --bg-color-type-1: rgb(255, 255, 255);
     --font-type-0: 400 60px/1.2 "Urbanist", Helvetica, Arial, serif;
@@ -9,6 +10,19 @@
     --font-type-4: 100 25px/1.32 "IBM Plex Mono", Helvetica, Arial, serif;
     --font-type-5: 200 18px/1.27 "IBM Plex Mono", Helvetica, Arial, serif;
     --padding-type-0: undefinedpx undefinedpx undefinedpx undefinedpx;
+}
+
+.back-button {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    gap: 1vh;
+    height: 6.5vh;
+    justify-content: center;
+    margin-top: 20px;
+    width: 200px;
 }
 
 .navbar {
@@ -62,7 +76,7 @@
     text-decoration: none;
 }
 
-.library-details {
+.structure-details {
     &.main {
         background-color: var(--bg-color-type-1);
         display: flex;
@@ -87,97 +101,6 @@
         position: absolute;
         right: 0px;
         top: 115px;
-    }
-
-    .medium_title {
-        bottom: 1590px;
-        color: var(--color-type-0);
-        font: var(--font-type-3);
-        height: 33px;
-        left: 1248px;
-        letter-spacing: 0px;
-        position: absolute;
-        right: 87px;
-        top: 77px;
-        width: 105px;
-    }
-
-    .medium_title1 {
-        bottom: 1590px;
-        color: var(--color-type-0);
-        font: var(--font-type-3);
-        height: 33px;
-        left: 1111px;
-        letter-spacing: 0px;
-        position: absolute;
-        right: 239px;
-        top: 77px;
-        width: 90px;
-    }
-
-    .medium_title2 {
-        bottom: 1590px;
-        color: var(--color-type-0);
-        font: var(--font-type-3);
-        height: 33px;
-        left: 974px;
-        letter-spacing: 0px;
-        position: absolute;
-        right: 376px;
-        top: 77px;
-        width: 90px;
-    }
-
-    .medium_title3 {
-        bottom: 1590px;
-        color: var(--color-type-0);
-        font: var(--font-type-3);
-        height: 33px;
-        left: 882px;
-        letter-spacing: 0px;
-        position: absolute;
-        right: 513px;
-        top: 77px;
-        width: 45px;
-    }
-
-    .medium_title4 {
-        bottom: 1590px;
-        color: var(--color-type-0);
-        font: var(--font-type-3);
-        height: 33px;
-        left: 728px;
-        letter-spacing: 0px;
-        position: absolute;
-        right: 605px;
-        top: 77px;
-        width: 107px;
-    }
-
-    .medium_title5 {
-        bottom: 1590px;
-        color: var(--color-type-0);
-        font: var(--font-type-3);
-        height: 33px;
-        left: 546px;
-        letter-spacing: 0px;
-        position: absolute;
-        right: 759px;
-        top: 77px;
-        width: 135px;
-    }
-
-    .medium_title11 {
-        bottom: 1634px;
-        color: var(--color-type-0);
-        font: var(--font-type-4);
-        height: 33px;
-        left: 99px;
-        letter-spacing: 0px;
-        position: absolute;
-        right: 1280px;
-        top: 33px;
-        width: 61px;
     }
 
     .image {

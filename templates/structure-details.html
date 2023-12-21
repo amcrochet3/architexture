@@ -25,7 +25,7 @@
 
 {% block body %}
 <nav class="navbar">
-    <!--<h1 class="navbar-heading">library</h1>-->
+    <a href="/"><img class="back-button" src="/static/img/back-arrow.svg"></a>
     <hr class="line" size="1" />
     <ul class="navbar-links">
         <li><a href="/dashboard/{{ user.user_id }}">dashboard</a></li>
@@ -37,7 +37,7 @@
     </ul>
 </nav>
 
-<main class="library-details main">
+<main class="structure-details main">
     <section class="section1">
         <img class="main-img" src="{{ structure.img_path }}" alt="alt text">
         <h1 class="hero_title">{{ structure.structure_name }}</h1>
@@ -53,15 +53,16 @@
         <hr class="line5" size="1" />
         <hr class="line6" size="1" />
         <h1 class="location-title">location</h1>
-        <h2 class="location-info">{{ structure.city }}, {% if state is not none %}{{ structure.state }},{% endif %}{{
+        <h2 class="location-info">{{ structure.city }}, {% if structure.state is not none %}{{ structure.state }},{%
+            endif %}{{
             structure.country }}</h2>
         <h1 class="style-title">style</h1>
         <h2 class="style-info">{{ structure.arch_style }}</h2>
         <h1 class="year-built-title">year completed</h1>
         <h2 class="year-built-info">{{ structure.year_built }}</h2>
         <h1 class="architect-title">architect</h1>
-        <h2 class="architect-info">{% if architect_name is not none %}{{ structure.architect_name }}{% else
-            %}{{structure.arch_firm}}{% endif %}</h2>
+        <h2 class="architect-info">{% if structure.architect_name is not none %}{{ structure.architect_name }}{% else
+            %}{{ structure.arch_firm }}{% endif %}</h2>
         <h1 class="type-title">type</h1>
         <h2 class="type-info">{{ structure.structure_type }}</h2>
         <img class="secondary-img" src="{{ structure.img_path2 }}" alt="alt text" />

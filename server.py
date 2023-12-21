@@ -1,6 +1,6 @@
 import os
 from flask import (Flask, render_template, request, flash, get_flashed_messages, session, redirect, jsonify)
-from model import connect_to_db, db, User
+from model import connect_to_db
 import crud
 from jinja2 import StrictUndefined
 
