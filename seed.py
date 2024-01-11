@@ -14,7 +14,7 @@ model.db.create_all()
 
 
 #mock user data
-for n in range(10):
+for n in range(5):
     email = f"user{n}@test.com"
     password = f"test{n}"
 

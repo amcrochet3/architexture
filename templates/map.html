@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block head %}
-<link rel="stylesheet" href="/static/css/dashboard.css">
+<link rel="stylesheet" href="/static/css/map.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link
@@ -24,8 +24,9 @@
 {% endblock %}
 
 {% block body %}
+
 <nav class="navbar">
-    <h1 class="navbar-heading">welcome</h1>
+    <a href="/"><img class="back-button" src="/static/img/back-arrow.svg"></a>
     <hr class="line" size="1" />
     <ul class="navbar-links">
         <li><a href="/dashboard/{{ user.user_id }}">dashboard</a></li>
@@ -37,42 +38,27 @@
     </ul>
 </nav>
 
-<div class="container-fluid">
+<div class="container-fluid mt-4">
     <div class="row">
-        <div class="col-md-6 col-lg-6 panel panel-dark">
-            <div class="panel-heading">
-                <h2 class="panel-title"> featured</h2>
-            </div>
+        <div class="col-lg-8">
+            <div id="map" class="map"></div>
         </div>
-
-        <div class="col-md-6 col-lg-6 panel panel-light">
-            <div class="panel-heading">
-                <h2 class="panel-title">approved structures</h2>
-            </div>
-            <div class="panel-body">
-                <p class="text-center">No submitted structures yet.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-6 col-lg-6 panel panel-blue">
-            <div class="panel-heading">
-                <h2 class="panel-title">liked structures</h2>
-            </div>
-            <div class="panel-body">
-                <p class="text-center">No liked structures yet.</p>
-            </div>
-        </div>
-
-        <div class="col-md-6 col-lg-6 panel panel-orange">
-            <div class="panel-heading">
-                <h2 class="panel-title">albums</h2>
-            </div>
-            <div class="panel-body">
-                <p class="text-center">No albums created yet.</p>
-            </div>
+        <div class="col-lg-4">
+            <ol class="list-group list-group-numbered" id="structuresList">
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                        <div class="fw-bold"></div>
+                        Loading, please wait...
+                    </div>
+                    <span class="badge rounded-pill"></span>
+                </li>
+            </ol>
         </div>
     </div>
 </div>
+
+<script src="/static/js/map.js"></script>
+<script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSMrST6tA5LevywsZYvPXPsmIqhlbmRg4&callback=initMap"></script>
+
 {% endblock %}

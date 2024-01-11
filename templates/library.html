@@ -25,12 +25,12 @@
 
 {% block body %}
 <nav class="navbar">
-    <h1 class="navbar-heading">library</h1>
+    <a href="/"><img class="back-button" src="/static/img/back-arrow.svg"></a>
     <hr class="line" size="1" />
     <ul class="navbar-links">
         <li><a href="/dashboard/{{ user.user_id }}">dashboard</a></li>
         <li><a href="/library">library</a></li>
-        <li><a href="#">map</a></li>
+        <li><a href="/map">map</a></li>
         <li><a href="#">submit</a></li>
         <li><a href="#">albums</a></li>
         <li><a href="#">log_out</a></li>

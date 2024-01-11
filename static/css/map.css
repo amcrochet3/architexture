@@ -1,0 +1,123 @@
+:root {
+    --color-type-0: rgb(0, 0, 0);
+    --color-type-1: rgb(255, 128, 37);
+    --bg-color-type-0: rgb(0, 0, 0);
+    --bg-color-type-1: rgb(255, 255, 255);
+    --bg-color-type-2: rgb(40, 167, 69);
+    --bg-color-type-3: rgb(226, 243, 230);
+    --font-type-0: 400 60px/1.2 "Urbanist", Helvetica, Arial, serif;
+    --font-type-1: italic 500 30px/1.2 "Urbanist", Helvetica, Arial, serif;
+    --font-type-2: 700 30px/1.2 "Urbanist", Helvetica, Arial, serif;
+    --font-type-3: 200 25px/1.32 "IBM Plex Mono", Helvetica, Arial, serif;
+    --font-type-4: 100 25px/1.32 "IBM Plex Mono", Helvetica, Arial, serif;
+    --font-type-5: 200 18px/1.27 "IBM Plex Mono", Helvetica, Arial, serif;
+    --padding-type-0: undefinedpx undefinedpx undefinedpx undefinedpx;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.back-button {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    gap: 1vh;
+    height: 6.5vh;
+    justify-content: center;
+    margin-top: 20px;
+    width: 200px;
+}
+
+.navbar {
+    align-items: center;
+    color: var(--color-type-0);
+    display: flex;
+    height: 85px;
+    justify-content: center;
+    position: relative;
+}
+
+.navbar-heading {
+    font-family: "Urbanist", sans-serif;
+    font-size: 53px;
+    margin: 0;
+    padding-right: 20px;
+}
+
+.line {
+    background-color: var(--bg-color-type-0);
+    left: calc(50% - 450px);
+    position: absolute;
+    top: 55%;
+    transform: translateY(-50%);
+    width: 1205px;
+}
+
+.navbar-links {
+    display: flex;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 25px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.navbar-links li {
+    margin-left: 50px;
+}
+
+.navbar-links a {
+    color: var(--color-type-0);
+}
+
+.navbar-links a:hover {
+    color: var(--color-type-1);
+    text-decoration: none;
+}
+
+.map {
+    width: 100%;
+    height: 550px;
+}
+
+.structures-list {
+    max-height: 550px;
+    overflow-y: auto;
+    margin-top: 40px;
+}
+
+.list-group-item {
+    border: none;
+    border-radius: 0;
+    padding: 10px 20px;
+    margin-bottom: 5px;
+    background-color: var(--bg-color-type-1);
+    color: var(--color-type-0);
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.list-group-item:hover {
+    background-color: var(--bg-color-type-3);
+    color: var(--color-type-0);
+}
+
+.active-list-group-item {
+    background-color: var(--bg-color-type-3) !important;
+}
+
+.fw-bold {
+    font-family: "Urbanist", sans-serif;
+    font-weight: bold;
+}
+
+.badge.rounded-pill {
+    background-color: var(--bg-color-type-2);
+}

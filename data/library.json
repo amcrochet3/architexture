@@ -214,5 +214,41 @@
         "lng": 4.8159301,
         "header": "A Whimsical Architectural Collage",
         "summary": "The Inntel Hotel in Zaandam, Netherlands, is a playful and imaginative take on traditional Dutch architecture. Known for its striking façade, which resembles a stack of various traditional Dutch houses in a range of colors and styles, the hotel is a visual spectacle. Opened in 2009, this unique design pays homage to the rich history and architectural heritage of the Zaan region, while providing a modern, luxurious stay for its guests. The Inntel Hotel Zaandam is not just a place to rest; it's a standout example of contemporary architecture's ability to merge whimsy with functionality, creating a memorable landmark in the heart of Zaandam."
+    },
+    {
+        "name": "Olde Pink House",
+        "type": "hospitality",
+        "style": "colonial",
+        "year_built": 1789,
+        "architect": "James Habersham, Jr.",
+        "firm": null,
+        "street": "23 Abercorn Street",
+        "city": "Savannah",
+        "state": "Georgia",
+        "country": "USA",
+        "img_path": "",
+        "img_path2": "",
+        "lat": 32.08045123683694,
+        "lng": -81.08982475780606,
+        "header": "",
+        "summary": ""
+    },
+    {
+        "name": "Cathedral of St. John the Baptist",
+        "type": "religious",
+        "style": "French gothic",
+        "year_built": 1873,
+        "architect": "Ephraim Francis Baldwin",
+        "firm": null,
+        "street": "222 East Harris Street",
+        "city": "Savannah",
+        "state": "Georgia",
+        "country": "USA",
+        "img_path": "",
+        "img_path2": "",
+        "lat": 32.07331832131551,
+        "lng": -81.09101830521183,
+        "header": "",
+        "summary": ""
     }
 ]

@@ -1,8 +1,9 @@
 import os
 from flask import (Flask, render_template, request, flash, get_flashed_messages, session, redirect, jsonify)
-from model import connect_to_db
+from model import connect_to_db, ArchitecturalStructure
 import crud
 from jinja2 import StrictUndefined
+import requests
 
 app = Flask(__name__)
 app.secret_key = os.environ["SECRET_KEY"]
@@ -91,15 +92,15 @@ def logout():
 
 
 #unique user dashboard
-@app.route('/dashboard/<user_id>', methods=["GET"])
+@app.route('/dashboard/<user_id>', methods=['GET'])
 def dashboard(user_id):
-    user = crud.get_user_by_id(user_id)
+    user = get_current_user()
 
     return render_template("dashboard.html", user=user)
 
 
 #structure library
-@app.route('/library', methods=["GET"])
+@app.route('/library', methods=['GET'])
 def library():
     user = get_current_user()
     structures = crud.get_all_structures()
@@ -108,12 +109,57 @@ def library():
 
 
 #structure details
-@app.route('/structure-details/<structure_id>', methods=["GET"])
+@app.route('/structure-details/<structure_id>', methods=['GET'])
 def structure_details(structure_id):
     user = get_current_user()
     structure = crud.get_structure_by_id(structure_id)
 
     return render_template("structure-details.html", user=user, structure=structure)
+
+
+#submitted structures map
+@app.route('/map', methods=['GET'])
+def map_display():
+    user = get_current_user()
+
+    return render_template("map.html", user=user)
+
+
+@app.route('/map-data', methods=['GET'])
+def map_data():
+    approved_structures = ArchitecturalStructure.query.all()
+    print(approved_structures)
+    locations = []
+    
+    for arch_structure in approved_structures:
+        address = f"{arch_structure.structure_name}, {arch_structure.city}, {arch_structure.country}"
+        if arch_structure.state:
+            address += f", {arch_structure.state}"
+
+        address = address.replace(" ", "%20")
+        address = address.replace(",", "")
+        url = f"https://maps.googleapis.com/maps/api/geocode/json?address={address}&key=AIzaSyDSMrST6tA5LevywsZYvPXPsmIqhlbmRg4"
+        response = requests.get(url)
+        results = response.json()
+
+        if results['status'] == 'OK':
+            lat = results['results'][0]['geometry']['location']['lat']
+            lng = results['results'][0]['geometry']['location']['lng']
+
+            locations.append({
+                'structure_name': arch_structure.structure_name,
+                'lat': lat,
+                'lng': lng,
+                'img_path': arch_structure.img_path
+            })
+        else:
+            print(f"Geocoding failed for address: {address}. Status: {results['status']}")
+
+        print(results)
+        
+    print(f"Locations list: {locations}")
+
+    return jsonify(locations)
 
 
 

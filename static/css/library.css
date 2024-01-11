@@ -18,6 +18,19 @@ body {
     overflow-x: hidden;
 }
 
+.back-button {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    gap: 1vh;
+    height: 6.5vh;
+    justify-content: center;
+    margin-top: 20px;
+    width: 200px;
+}
+
 .navbar {
     align-items: center;
     color: var(--color-type-0);
