@@ -134,4 +134,6 @@ body {
 
 .card-body p span {
     text-decoration: underline;
+    font-family: "Urbanist";
+    font-weight: bold;
 }

@@ -93,28 +93,50 @@ body {
     font-family: "IBM Plex Mono", serif;
 }
 
-.panel-dark {
-    background-color: var(--bg-color-type-1);
-    color: var(--color-type-0);
-}
-
-.panel-light {
-    background-color: var(--bg-color-type-2);
-}
-
-.panel-blue {
-    background-color: var(--bg-color-type-3);
-}
-
-.panel-orange {
-    background-color: var(--bg-color-type-4);
-    color: var(--color-type-0);
-}
-
 .row {
     display: flex;
 }
 
 .col {
     margin: 0;
+}
+
+.container-fluid {
+    display: flex;
+    height: calc(100vh - 100px);
+    width: 100vw;
+    padding-left: 5px !important;
+    padding-right: 0 !important;
+}
+
+.featured-panel {
+    flex-grow: 1;
+    height: 100%;
+}
+
+.right-panel {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    width: 100%;
+}
+
+.albums-panel,
+.approved-panel {
+    flex-grow: 1;
+    height: 50%;
+    width: 100%;
+    border-style: solid;
+}
+
+.albums-panel {
+    border-right: 0;
+    border-bottom: 0;
+}
+
+.approved-panel {
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 0;
 }

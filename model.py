@@ -25,7 +25,6 @@ class ArchitecturalStructure(db.Model):
     summary = db.Column(db.String(1000))
     lat = db.Column(db.Float)
     lng = db.Column(db.Float)
-    num_likes = db.Column(db.Integer, default=0)
     featured = db.Column(db.Boolean)
     times_featured = db.Column(db.Integer)
 
@@ -34,7 +33,6 @@ class ArchitecturalStructure(db.Model):
 
     #ArchitecturalStructure ORM relationships
     user = db.relationship("User", back_populates="structures")
-    likes = db.relationship("Like", back_populates="structure")
     albums = db.relationship("Album", secondary="album_structures", back_populates="structures")
 
 
@@ -51,7 +49,6 @@ class User(db.Model):
     structures = db.relationship("ArchitecturalStructure", back_populates="user")
     admin = db.relationship("Admin", back_populates="user")
     submissions = db.relationship("Submission", back_populates="user")
-    likes = db.relationship("Like", back_populates="user")
     albums = db.relationship("Album", back_populates="user")
 
 
@@ -88,22 +85,6 @@ class Submission(db.Model):
 
     #Submission ORM relationship
     user = db.relationship("User", back_populates="submissions")
-
-
-class Like(db.Model):
-
-    __tablename__ = "likes"
-
-    like_id = db.Column(db.Integer, primary_key=True)
-    liked = db.Column(db.Boolean)
-    
-    #Like foreign keys
-    structure_id = db.Column(db.Integer, db.ForeignKey("architectural_structures.structure_id"))
-    user_id = db.Column(db.Integer, db.ForeignKey("users.user_id"))
-
-    #Like ORM relationships
-    structure = db.relationship("ArchitecturalStructure", back_populates="likes")
-    user = db.relationship("User", back_populates="likes")
 
 
 class AlbumStructure(db.Model):

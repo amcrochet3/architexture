@@ -37,42 +37,34 @@
     </ul>
 </nav>
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-6 col-lg-6 panel panel-dark">
-            <div class="panel-heading">
-                <h2 class="panel-title"> featured</h2>
-            </div>
+<div class="container-fluid d-flex">
+    <div class="col-md-6 col-lg-6 panel featured-panel">
+        <div class="panel-heading">
+            <h2 class="panel-title">featured structure</h2>
         </div>
-
-        <div class="col-md-6 col-lg-6 panel panel-light">
-            <div class="panel-heading">
-                <h2 class="panel-title">approved structures</h2>
-            </div>
-            <div class="panel-body">
-                <p class="text-center">No submitted structures yet.</p>
-            </div>
+        <div class="panel-body">
+            <p class="text-center">No featured structure this week.</p>
         </div>
     </div>
-
-    <div class="row">
-        <div class="col-md-6 col-lg-6 panel panel-blue">
+    <div class="right-panel">
+        <div class="col-md-12 col-lg-12 panel approved-panel">
             <div class="panel-heading">
-                <h2 class="panel-title">liked structures</h2>
+                <h2 class="panel-title">approved submissions</h2>
             </div>
             <div class="panel-body">
-                <p class="text-center">No liked structures yet.</p>
+                <p class="text-left">You have not submitted any structures yet.</p>
             </div>
         </div>
-
-        <div class="col-md-6 col-lg-6 panel panel-orange">
+        <div class="col-md-12 col-lg-12 panel albums-panel">
             <div class="panel-heading">
                 <h2 class="panel-title">albums</h2>
             </div>
             <div class="panel-body">
-                <p class="text-center">No albums created yet.</p>
+                <p class="text-left">No albums created yet.</p>
             </div>
         </div>
     </div>
 </div>
+
+
 {% endblock %}
