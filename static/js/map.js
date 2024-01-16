@@ -28,7 +28,7 @@ async function initMap() {
                     map: basicMap,
                     icon: {
                         url: '/static/img/current-location.svg',
-                        scaledSize: new google.maps.Size(30, 30)
+                        scaledSize: new google.maps.Size(20, 20)
                     },
                     title: 'Your Location'
                 });

@@ -21,7 +21,8 @@ for n in range(5):
     user = crud.create_user(email, password)
 
     model.db.session.add(user)
-    model.db.session.commit()
+
+model.db.session.commit()
 
 
 #mock library data and geolocation code
@@ -69,3 +70,34 @@ for structure in library_data:
     )
     
     db_structures.append(structure)
+
+
+#mock album data
+urban_geometry_album = crud.create_album(album_name='Urban Geometry', description='Exploring the symmetry and design of urban architecture.')
+nature_by_design_album = crud.create_album(album_name='Nature by Design', description='A showcase of natural aesthetics and design in landscapes.')
+
+model.db.session.add(urban_geometry_album)
+model.db.session.add(nature_by_design_album)
+model.db.session.commit()
+
+urban_geometry_indices = [4, 6, 10]
+nature_by_design_indices = [0, 7]
+
+for i in urban_geometry_indices:
+    if i < len(db_structures):
+        crud.add_structure_to_album(urban_geometry_album.album_id, db_structures[i].structure_id)
+
+for i in nature_by_design_indices:
+    if i < len(db_structures):
+        crud.add_structure_to_album(nature_by_design_album.album_id, db_structures[i].structure_id)
+
+model.db.session.commit()
+
+#associate albums with each user
+users = model.User.query.all()
+for user in users:
+    user.albums.append(urban_geometry_album)
+    user.albums.append(nature_by_design_album)
+    model.db.session.add(user)
+
+model.db.session.commit()

@@ -103,7 +103,9 @@ class Album(db.Model):
     __tablename__ = "albums"
 
     album_id = db.Column(db.Integer, primary_key=True, autoincrement=True, unique=True)
+    thumbnail_path = db.Column(db.String(255))
     album_name = db.Column(db.String(255))
+    description = db.Column(db.String(500))
 
     #Album foreign key
     user_id = db.Column(db.Integer, db.ForeignKey("users.user_id"))
@@ -111,7 +113,7 @@ class Album(db.Model):
     #Album ORM relationships
     structures = db.relationship("ArchitecturalStructure", secondary="album_structures", back_populates="albums")
     user = db.relationship("User", back_populates="albums")
-
+    
 
 
 def connect_to_db(flask_app, db_uri="postgresql:///architexture", echo=True):

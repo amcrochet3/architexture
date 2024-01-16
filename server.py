@@ -1,6 +1,6 @@
 import os
 from flask import (Flask, render_template, request, flash, get_flashed_messages, session, redirect, jsonify)
-from model import connect_to_db, ArchitecturalStructure
+from model import connect_to_db, User, ArchitecturalStructure, Album
 import crud
 from jinja2 import StrictUndefined
 import requests
@@ -128,7 +128,6 @@ def map_display():
 @app.route('/map-data', methods=['GET'])
 def map_data():
     approved_structures = ArchitecturalStructure.query.all()
-    print(approved_structures)
     locations = []
     
     for arch_structure in approved_structures:
@@ -160,6 +159,70 @@ def map_data():
     print(f"Locations list: {locations}")
 
     return jsonify(locations)
+
+
+#personalized album creation
+@app.route('/albums/<user_id>', methods=['GET'])
+def albums_display(user_id):
+    user = get_current_user()
+    albums = crud.get_albums_by_user(user_id)
+
+    return render_template("albums.html", user=user, albums=albums)
+
+
+@app.route('/albums/<user_id>', methods=['POST'])
+def create_album(user_id):
+    user = get_current_user()
+    album_name = request.form.get('album-name')
+    description = request.form.get('album-description')
+    
+    if album_name:
+        album = crud.create_album(user_id=user.user_id, album_name=album_name, description=description)
+
+        return jsonify({
+            'album_id': album.album_id, 
+            'album_name': album.album_name, 
+            'description': album.description
+        })
+    else:
+        return jsonify({'error': 'Album name is required'}), 400
+    
+
+@app.route('/add_to_album/<structure_id>', methods=['POST'])
+def add_to_album(structure_id):
+    
+    user_id = session.get("user_id")
+    album_id = request.form.get("album-id")
+    
+    crud.add_structure_to_album(album_id, structure_id)
+    
+    return redirect(f'/albums/{user_id}')
+
+
+@app.route('/album-details/<album_id>', methods=['GET'])
+def album_details(album_id):
+    user = get_current_user()
+    album = crud.get_album_by_id(album_id)
+    structures = album.structures
+
+    return render_template("album-details.html", user=user, album=album, structures=structures)
+
+
+@app.route('/edit-album/<album_id>', methods=['POST'])
+def edit_album(album_id):
+    album_name = request.form['album-name']
+    album_description = request.form['album-description']
+    
+    updated_album = crud.update_album(album_id, album_name, album_description)
+    if updated_album:
+        return jsonify({'success': 'Album updated successfully'})
+    
+
+@app.route('/delete-album/<album_id>', methods=['DELETE'])
+def delete_album_route(album_id):
+    success = crud.delete_album(album_id)
+    if success:
+        return jsonify({'success': 'Album deleted successfully'})
 
 
 

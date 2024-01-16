@@ -25,14 +25,13 @@
 
 {% block body %}
 <nav class="navbar">
-    <a href="/"><img class="back-button" src="/static/img/back-arrow.svg"></a>
     <hr class="line" size="1" />
     <ul class="navbar-links">
         <li><a href="/dashboard/{{ user.user_id }}">dashboard</a></li>
         <li><a href="/library">library</a></li>
         <li><a href="/map">map</a></li>
+        <li><a href="/albums/{{ user.user_id }}">albums</a></li>
         <li><a href="#">submit</a></li>
-        <li><a href="#">albums</a></li>
         <li><a href="#">log_out</a></li>
     </ul>
 </nav>
@@ -47,11 +46,6 @@
         <hr class="line1" size="1" />
         <h4 class="highlight">{{ structure.summary }}</h4>
         <h1 class="title">{{ structure.header }}</h1>
-        <!--<hr class="line2" size="1" />
-        <hr class="line3" size="1" />
-        <hr class="line4" size="1" />
-        <hr class="line5" size="1" />
-        <hr class="line6" size="1" />-->
         <h1 class="location-title">location</h1>
         <h2 class="location-info">{{ structure.city }}, {% if structure.state is not none %}{{ structure.state }},{%
             endif %}{{

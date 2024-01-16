@@ -1,0 +1,132 @@
+:root {
+    --bg-color-type-0: rgb(0, 0, 0);
+    --bg-color-type-1: rgb(255, 128, 37);
+    --color-type-0: rgb(0, 0, 0);
+    --color-type-1: rgb(255, 128, 37);
+    --color-type-2: rgb(0, 0, 0, 0.2);
+    --color-type-3: rgb(0, 123, 255);
+    --color-type-4: rgb(153, 153, 153);
+    --color-type-5: rgb(255, 255, 255);
+}
+
+
+/* Apply styles */
+
+body {
+    font-family: "Urbanist", sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.back-button {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    gap: 1vh;
+    height: 6.5vh;
+    justify-content: center;
+    margin-top: 20px;
+    width: 200px;
+}
+
+.navbar {
+    align-items: center;
+    color: var(--color-type-0);
+    display: flex;
+    height: 85px;
+    justify-content: center;
+    position: relative;
+}
+
+.navbar-heading {
+    font-family: "Urbanist", sans-serif;
+    font-size: 53px;
+    margin: 0;
+    padding-right: 20px;
+}
+
+.line {
+    background-color: var(--bg-color-type-0);
+    left: calc(50% - 450px);
+    position: absolute;
+    top: 55%;
+    transform: translateY(-50%);
+    width: 1205px;
+}
+
+.navbar-links {
+    display: flex;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 25px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.navbar-links li {
+    margin-left: 50px;
+}
+
+.navbar-links a {
+    color: var(--color-type-0);
+}
+
+.navbar-links a:hover {
+    color: var(--color-type-1);
+    text-decoration: none;
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.row {
+    margin-top: 30px;
+}
+
+.card {
+    border-style: 2px dashed;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px var(--color-type-2);
+    margin-bottom: 50px;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.card-head {
+    margin-bottom: 10px;
+}
+
+.card-head h5 a {
+    color: var(--color-type-3);
+    font-family: "IBM Plex Mono", monospace;
+    text-decoration: none;
+}
+
+.card-head h5 a:hover {
+    color: var(--color-type-1);
+    text-decoration: underline;
+}
+
+.btn.fab {
+    position: absolute;
+    right: 5rem;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    background-color: var(--bg-color-type-1);
+    color: var(--color-type-5);
+}
