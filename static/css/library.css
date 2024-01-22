@@ -2,6 +2,7 @@
 
 :root {
     --bg-color-type-0: rgb(0, 0, 0);
+    --bg-color-type-1: rgb(255, 128, 37);
     --color-type-0: rgb(0, 0, 0);
     --color-type-1: rgb(255, 128, 37);
     --color-type-2: rgb(0, 0, 0, 0.2);
@@ -135,5 +136,22 @@ body {
 .card-body p span {
     text-decoration: underline;
     font-family: "Urbanist";
+    font-weight: bold;
+}
+
+.btn {
+    background-color: #fff;
+    color: #007bff !important;
+    border: solid 1px #007bff !important;
+}
+
+.btn:hover {
+    background-color: var(--bg-color-type-1) !important;
+    color: #fff !important;
+    border: solid 1px var(--color-type-1) !important;
+}
+
+.active-link {
+    color: var(--color-type-1) !important;
     font-weight: bold;
 }

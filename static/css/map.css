@@ -85,6 +85,11 @@ body {
 .map {
     width: 100%;
     height: 550px;
+    border: solid 1px;
+}
+
+h2 {
+    font-family: "Urbanist", sans-serif;
 }
 
 .structures-list {
@@ -120,4 +125,16 @@ body {
 
 .badge.rounded-pill {
     background-color: var(--bg-color-type-2);
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 25px !important;
+    margin-left: 50px !important;
+}
+
+.active-link {
+    color: var(--color-type-1) !important;
+    font-weight: bold;
 }

@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Admin Dashboard</title>
+<link rel="stylesheet" href="/static/css/admin.css">
+{% endblock %}
+
+{% block body %}
+<h1>Structure Submissions</h1>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Structure Name</th>
+        <th>Typology</th>
+        <th>Street Address</th>
+        <th>City</th>
+        <th>State/Province</th>
+        <th>Country</th>
+        <th>Image</th>
+        <th>Actions</th>
+    </tr>
+    {% for submission in submissions %}
+    <tr id="submission-{{ submission.submission_id }}">
+        <td>{{ submission.submission_id }}</td>
+        <td>{{ submission.user_structure_name }}</td>
+        <td>{{ submission.user_typology }}</td>
+        <td>{{ submission.user_address }}</td>
+        <td>{{ submission.user_city }}</td>
+        <td>{{ submission.user_state }}</td>
+        <td>{{ submission.user_country }}</td>
+        <td><img src="{{ submission.user_upload_file_path }}" height="50px" width="50px"></td>
+        <td>
+            <form onsubmit="handleApprove(event, '{{ submission.submission_id }}')" style="display: inline;">
+                <button>Approve</button>
+            </form>
+            <form onsubmit="handleDeny(event, '{{ submission.submission_id }}')" style="display: inline;">
+                <button>Deny</button>
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+<br>
+<h1>Featured Structures Console</h1>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Structure Name</th>
+        <th>Image</th>
+        <th>Currently Featured</th>
+        <th>Times Featured</th>
+        <th>Actions</th>
+    </tr>
+    {% for structure in structures %}
+    <tr id="structure-{{ structure.structure_id }}">
+        <td>{{ structure.structure_id }}</td>
+        <td>{{ structure.structure_name }}</td>
+        <td><img src="{{ structure.img_path }}" height="50px" width="50px"></td>
+        <td>{{ structure.featured }}</td>
+        <td>{{ structure.times_featured }}</td>
+        <td>
+            <input type="radio" name="featured-structure" onchange="handleFeatureChange('{{ structure.structure_id }}')"
+                {% if structure.featured %} checked {% endif %}>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+<script>
+    function handleApprove(event, submissionId) {
+        event.preventDefault();
+        fetch(`/admin/approve/${submissionId}`, { method: 'POST' })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    document.getElementById(`submission-${submissionId}`).remove();
+                } else {
+                    console.error('Failed to approve submission.');
+                }
+            })
+            .catch(error => console.error('Error:', error));
+    }
+
+    function handleDeny(event, submissionId) {
+        event.preventDefault();
+        fetch(`/admin/deny/${submissionId}`, { method: 'POST' })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    document.getElementById(`submission-${submissionId}`).remove();
+                } else {
+                    console.error('Failed to deny submission.');
+                }
+            })
+            .catch(error => console.error('Error:', error));
+    }
+
+    function handleFeatureChange(structureId) {
+        fetch(`/admin/feature/${structureId}`, { method: 'POST' })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    console.log('Structure featured successfully.');
+                } else {
+                    console.error('Failed to feature the structure.');
+                }
+            })
+            .catch(error => console.error('Error:', error));
+    }
+</script>
+{% endblock %}

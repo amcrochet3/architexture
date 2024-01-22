@@ -31,36 +31,97 @@
         <li><a href="/library">library</a></li>
         <li><a href="/map">map</a></li>
         <li><a href="/albums/{{ user.user_id }}">albums</a></li>
-        <li><a href="#">submit</a></li>
+        <li><a href="/submit/{{ user.user_id }}">submit</a></li>
         <li><a href="#">log_out</a></li>
     </ul>
 </nav>
 
 <main class="structure-details main">
     <section class="section1">
-        <img class="main-img" src="{{ structure.img_path }}" alt="alt text">
-        <h1 class="hero_title">{{ structure.structure_name }}</h1>
-        <img class="image2" src="/static/img/decorative-arrow.svg" alt="alt text" />
-        <hr class="line1" size="1" />
-        <div class="rect"></div>
-        <hr class="line1" size="1" />
-        <h4 class="highlight">{{ structure.summary }}</h4>
-        <h1 class="title">{{ structure.header }}</h1>
-        <h1 class="location-title">location</h1>
-        <h2 class="location-info">{{ structure.city }}, {% if structure.state is not none %}{{ structure.state }},{%
-            endif %}{{
-            structure.country }}</h2>
-        <h1 class="style-title">style</h1>
-        <h2 class="style-info">{{ structure.arch_style }}</h2>
-        <h1 class="year-built-title">year completed</h1>
-        <h2 class="year-built-info">{{ structure.year_built }}</h2>
-        <h1 class="architect-title">architect</h1>
-        <h2 class="architect-info">{% if structure.architect_name is not none %}{{ structure.architect_name }}{% else
-            %}{{ structure.arch_firm }}{% endif %}</h2>
-        <h1 class="type-title">type</h1>
-        <h2 class="type-info">{{ structure.structure_type }}</h2>
-        <img class="secondary-img" src="{{ structure.img_path2 }}" alt="alt text" />
+        <div class="container-fluid">
+            <row class="col-lg-6 col-md-6">
+                <img class="main-img" src="{{ structure.img_path }}" alt="alt text">
+            </row>
+        </div>
+        <div class="container-fluid">
+            <row class="col-lg-6 col-md-6">
+                <h1 class="hero_title">{{ structure.structure_name }}</h1>
+                <img class="decorative-arrow" src="/static/img/decorative-arrow.svg" alt="alt text" />
+            </row>
+        </div>
+        <div class="container-fluid">
+            <row class="col-lg-6">
+                <ul>
+                    <li>
+                        <strong>Location: </strong>{{ structure.city }}, {% if structure.state is not none %}{{
+                        structure.state }}, {%
+                        endif %}{{
+                        structure.country }}
+                    </li>
+                    <li>
+                        <strong>Style: </strong>{{ structure.arch_style }}
+                    </li>
+                    <li><strong>Year Completed: </strong>{{ structure.year_built }}</li>
+                    <li><strong>{% if structure.architect_name is not none %}Architect: {% else %}Firm: {% endif
+                            %}</strong>{% if structure.architect_name is not none %}{{ structure.architect_name }}{%
+                        else
+                        %}{{ structure.arch_firm }}{% endif %}
+                    </li>
+                    <li><strong>Typology: </strong>{{ structure.structure_type }}</li>
+                </ul>
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Add to Album
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        {% for album in albums %}
+                        <form class="add-to-album-form" action="/add_to_album/{{ structure.structure_id }}"
+                            method="POST">
+                            <input type="hidden" name="album-id" value="{{ album.album_id }}">
+                            <button type="submit" class="dropdown-item">{{ album.album_name }}</button>
+                        </form>
+                        {% endfor %}
+                    </div>
+                </div>
+            </row>
+        </div>
+        <div class="container-fluid">
+            <row class="col-lg-6">
+                <h1 class="title">{{ structure.header }}</h1>
+                <h4 class="highlight">{{ structure.summary }}</h4>
+            </row>
+        </div>
+        <div class="container-fluid">
+            <div class="col-lg-6">
+                <img class="secondary-img" src="{{ structure.img_path2 }}" alt="alt text" />
+            </div>
+        </div>
     </section>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelectorAll('.add-to-album-form').forEach(function (form) {
+                form.onsubmit = function (event) {
+                    event.preventDefault();
+                    var actionUrl = form.action;
+                    var data = new FormData(form);
+
+                    fetch(actionUrl, {
+                        method: 'POST',
+                        body: data
+                    })
+                        .then(response => response.json())
+                        .then(data => {
+                            alert(data.message);
+                        })
+                        .catch(error => {
+                            console.error('Error:', error);
+                            alert('An error occurred while adding to the album.');
+                        });
+                };
+            });
+        });
+    </script>
 </main>
 {% endblock %}

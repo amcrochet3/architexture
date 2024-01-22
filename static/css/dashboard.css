@@ -140,3 +140,35 @@ body {
     border-right: 0;
     border-bottom: 0;
 }
+
+a:hover {
+    color: var(--color-type-3) !important;
+}
+
+.featured-img {
+    margin-top: 1rem;
+    width: 500px;
+    height: 355px;
+    border: solid 1px #000;
+}
+
+.learn-more {
+    margin-left: 35rem;
+    font-family: "Urbanist", sans-serif;
+}
+
+.learn-more:hover {
+    background-color: var(--bg-color-type-4) !important;
+    color: var(--color-type-0) !important;
+    border: none;
+}
+
+.hero-title {
+    font-size: 1.75rem;
+    margin-top: 1.5rem;
+}
+
+.active-link {
+    color: var(--color-type-3) !important;
+    font-weight: bold;
+}

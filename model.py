@@ -68,17 +68,15 @@ class Submission(db.Model):
 
     submission_id = db.Column(db.Integer, primary_key=True, autoincrement=True, unique=True)
     user_structure_name = db.Column(db.String(255), nullable=True)
-    user_structure_type = db.Column(db.String(50))
-    user_arch_style = db.Column(db.String(100))
-    user_year_built = db.Column(db.Integer, nullable=True)
-    user_arch_firm = db.Column(db.String(255), nullable=True)
-    user_architect_name = db.Column(db.String(255), nullable=True)
-    user_street_address = db.Column(db.String(255), nullable=True)
-    user_city = db.Column(db.String(255))
-    user_state_or_province = db.Column(db.String(50), nullable=True)
-    user_postal_code = db.Column(db.String(10), nullable=True)
-    user_country = db.Column(db.String(100))
-    user_upload_file_path = db.Column(db.String(255))
+    user_typology = db.Column(db.String(100), nullable=True)
+    user_address = db.Column(db.String(255), nullable=True)
+    user_city = db.Column(db.String(255), nullable=True)
+    user_state = db.Column(db.String(50), nullable=True)
+    user_country = db.Column(db.String(100), nullable=True)
+    user_upload_file_path = db.Column(db.String(255), nullable=True)
+    user_lat = db.Column(db.Float, nullable=True)
+    user_lng = db.Column(db.Float, nullable=True)
+    status = db.Column(db.Boolean)
 
     #Submission foreign key
     user_id = db.Column(db.Integer, db.ForeignKey("users.user_id"))
@@ -126,6 +124,7 @@ def connect_to_db(flask_app, db_uri="postgresql:///architexture", echo=True):
     db.init_app(flask_app)
 
     print("Connected to the db!")
+
 
 
 if __name__ == "__main__":

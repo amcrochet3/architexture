@@ -32,7 +32,7 @@
         <li><a href="/library">library</a></li>
         <li><a href="/map">map</a></li>
         <li><a href="/albums/{{ user.user_id }}">albums</a></li>
-        <li><a href="#">submit</a></li>
+        <li><a href="/submit/{{ user.user_id }}">submit</a></li>
         <li><a href="#">log_out</a></li>
     </ul>
 </nav>
@@ -43,6 +43,7 @@
             <div id="map" class="map"></div>
         </div>
         <div class="col-lg-4">
+            <h2>Structures in Your Area</h2>
             <ol class="list-group list-group-numbered" id="structuresList">
                 <li class="list-group-item d-flex justify-content-between align-items-start">
                     <div class="ms-2 me-auto">
@@ -59,5 +60,14 @@
 <script src="/static/js/map.js"></script>
 <script async
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSMrST6tA5LevywsZYvPXPsmIqhlbmRg4&callback=initMap"></script>
+<script>
+    const currentPath = window.location.pathname;
+    const navLinks = document.querySelectorAll('.navbar a');
 
+    navLinks.forEach(link => {
+        if (link.getAttribute('href') === currentPath) {
+            link.classList.add('active-link');
+        }
+    });
+</script>
 {% endblock %}

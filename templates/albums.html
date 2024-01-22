@@ -31,19 +31,19 @@
         <li><a href="/library">library</a></li>
         <li><a href="/map">map</a></li>
         <li><a href="/albums/{{ user.user_id }}">albums</a></li>
-        <li><a href="#">submit</a></li>
+        <li><a href="/submit/{{ user.user_id }}">submit</a></li>
         <li><a href="#">log_out</a></li>
     </ul>
 </nav>
 
-<div>
+<div class="col-md-3">
     <button type="button" class="btn fab" data-toggle="modal" data-target="#createAlbumModal"
         id="create-album-fab">+</button>
 </div>
 <div class="row">
     {% for album in albums %}
     <div class="col-md-3">
-        <div class="card mt-5 mb-4">
+        <div class="card mb-4">
             <img class="card-img-top" src="{{ album.thumbnail_path }}" alt="Album Thumbnail">
             <div class="card-body">
                 <div class="card-head">
@@ -54,6 +54,8 @@
                     </h5>
                 </div>
                 <p>{{ album.description }}</p>
+                <a href="#" class="card-link">Edit</a>
+                <a href="#" class="card-link">Delete</a>
             </div>
         </div>
     </div>
@@ -89,6 +91,16 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    const currentPath = window.location.pathname;
+    const navLinks = document.querySelectorAll('.navbar a');
+
+    navLinks.forEach(link => {
+        if (link.getAttribute('href') === currentPath) {
+            link.classList.add('active-link');
+        }
+    });
+</script>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
 
@@ -145,11 +157,11 @@
 
         function addAlbumToPage(album) {
             var description = album.description ? album.description : 'No description provided';
-            var thumbnailUrl = album.thumbnail_url || '/static/img/album thumbnail placeholder.jpg'; // Use the default thumbnail if not provided
+            var thumbnailUrl = album.thumbnail_url || '/static/img/album thumbnail placeholder.jpg';
             var albumsContainer = document.querySelector('.row');
             var newAlbumHtml = '<div class="col-md-3">' +
                 '<div class="card mt-5 mb-4">' +
-                '<img src="' + thumbnailUrl + '" alt="Album Thumbnail" class="card-img-top">' + // Add the thumbnail image
+                '<img src="' + thumbnailUrl + '" alt="Album Thumbnail" class="card-img-top">' +
                 '<div class="card-body">' +
                 '<div class="card-head">' +
                 '<h5><a href="/album-details/' + album.album_id + '">' + album.album_name + '</a></h5>' +
@@ -160,7 +172,6 @@
                 '</div>';
             albumsContainer.insertAdjacentHTML('beforeend', newAlbumHtml);
         }
-
     });
 </script>
 {% endblock %}

@@ -117,277 +117,56 @@
     .main-img {
         border-color: var(--color-type-0);
         border-style: solid;
-        border-width: 1px 0px 1px 1px;
-        bottom: 1052px;
+        border-width: 1px;
         height: 474px;
-        left: 712px;
+        margin-right: -90rem;
         object-fit: cover;
         position: absolute;
         right: 0px;
-        top: 60px;
+        top: 5rem;
         width: 728px;
     }
 
     .hero_title {
-        bottom: 1038px;
         color: var(--color-type-0);
         font: var(--font-type-0);
-        height: 72px;
-        left: 144px;
-        letter-spacing: 0px;
+        left: 10rem;
         position: absolute;
-        right: 827px;
-        top: 477px;
-        width: 469px;
+        top: 4rem;
+        width: 502px;
+        font-size: 48px;
     }
 
-    .image2 {
-        bottom: 1054px;
+    .decorative-arrow {
         height: 38px;
-        left: 63px;
+        left: 5rem;
         object-fit: cover;
         position: absolute;
-        right: 1325px;
-        top: 493px;
+        top: 5rem;
         width: 52px;
     }
 
-    .line1 {
-        background-color: var(--bg-color-type-0);
-        bottom: 993px;
-        height: 1px;
-        left: 0px;
-        position: absolute;
-        right: 0px;
-        top: 600px;
-    }
-
-    .rect {
-        background-color: var(--bg-color-type-0);
-        bottom: 0px;
-        height: 1085px;
-        left: 720px;
-        position: absolute;
-        right: 719px;
-        top: 618px;
-        width: 1px;
-    }
-
     .highlight {
-        bottom: 584px;
         color: var(--color-type-0);
         font: var(--font-type-5);
         height: 276px;
-        left: 792px;
         letter-spacing: 0px;
         position: absolute;
-        right: 90px;
         text-align: justify;
-        top: 840px;
-        width: 558px;
+        top: 16.5rem;
+        width: 723px;
+        left: 46.5rem;
     }
 
     .title {
-        bottom: 901px;
         color: var(--color-type-0);
         font: var(--font-type-1);
         height: 36px;
-        left: 792px;
         letter-spacing: 0px;
         position: absolute;
-        right: 90px;
-        top: 763px;
+        top: 12rem;
         width: 558px;
-    }
-
-    .line2 {
-        background-color: var(--bg-color-type-0);
-        bottom: 894px;
-        height: 1px;
-        left: 0px;
-        position: absolute;
-        right: 820px;
-        top: 805px;
-        width: 720px;
-    }
-
-    .line3 {
-        background-color: var(--bg-color-type-0);
-        bottom: 795px;
-        height: 1px;
-        left: 0px;
-        position: absolute;
-        right: 820px;
-        top: 904px;
-        width: 720px;
-    }
-
-    .line4 {
-        background-color: var(--bg-color-type-0);
-        bottom: 696px;
-        height: 1px;
-        left: 0px;
-        position: absolute;
-        right: 820px;
-        top: 1003px;
-        width: 720px;
-    }
-
-    .line5 {
-        background-color: var(--bg-color-type-0);
-        bottom: 597px;
-        height: 1px;
-        left: 0px;
-        position: absolute;
-        right: 820px;
-        top: 1102px;
-        width: 720px;
-    }
-
-    .line6 {
-        background-color: var(--bg-color-type-0);
-        bottom: 498px;
-        height: 1px;
-        left: 0px;
-        position: absolute;
-        right: 820px;
-        top: 1201px;
-        width: 720px;
-    }
-
-    .location-title {
-        bottom: 899px;
-        color: var(--color-type-0);
-        font: var(--font-type-2);
-        height: 36px;
-        left: 25px;
-        letter-spacing: 0px;
-        position: absolute;
-        right: 1308px;
-        text-align: justify;
-        top: 765px;
-        width: 107px;
-    }
-
-    .style-title {
-        bottom: 800px;
-        color: var(--color-type-0);
-        font: var(--font-type-2);
-        height: 36px;
-        left: 25px;
-        letter-spacing: 0px;
-        position: absolute;
-        right: 1351px;
-        text-align: justify;
-        top: 864px;
-        width: 64px;
-    }
-
-    .year-built-title {
-        bottom: 701px;
-        color: var(--color-type-0);
-        font: var(--font-type-2);
-        height: 36px;
-        left: 25px;
-        letter-spacing: 0px;
-        position: absolute;
-        right: 1201px;
-        text-align: justify;
-        top: 963px;
-        width: 214px;
-    }
-
-    .architect-title {
-        bottom: 602px;
-        color: var(--color-type-0);
-        font: var(--font-type-2);
-        height: 36px;
-        left: 25px;
-        letter-spacing: 0px;
-        position: absolute;
-        right: 1294px;
-        text-align: justify;
-        top: 1062px;
-        width: 121px;
-    }
-
-    .type-title {
-        bottom: 504px;
-        color: var(--color-type-0);
-        font: var(--font-type-2);
-        height: 36px;
-        left: 25px;
-        letter-spacing: 0px;
-        position: absolute;
-        right: 1352px;
-        text-align: justify;
-        top: 1160px;
-        width: 63px;
-    }
-
-    .location-info {
-        bottom: 900px;
-        color: var(--color-type-0);
-        font: var(--font-type-3);
-        height: 33px;
-        left: 393px;
-        letter-spacing: 0px;
-        position: absolute;
-        right: 745px;
-        top: 767px;
-        width: 302px;
-    }
-
-    .architect-info {
-        bottom: 602px;
-        color: var(--color-type-0);
-        font: var(--font-type-3);
-        height: 33px;
-        left: 393px;
-        letter-spacing: 0px;
-        position: absolute;
-        right: 792px;
-        top: 1065px;
-        width: 255px;
-    }
-
-    .type-info {
-        bottom: 505px;
-        color: var(--color-type-0);
-        font: var(--font-type-3);
-        height: 33px;
-        left: 393px;
-        letter-spacing: 0px;
-        position: absolute;
-        right: 882px;
-        top: 1162px;
-        width: 165px;
-    }
-
-    .style-info {
-        bottom: 800px;
-        color: var(--color-type-0);
-        font: var(--font-type-3);
-        height: 33px;
-        left: 393px;
-        letter-spacing: 0px;
-        position: absolute;
-        right: 912px;
-        top: 867px;
-        width: 135px;
-    }
-
-    .year-built-info {
-        bottom: 701px;
-        color: var(--color-type-0);
-        font: var(--font-type-3);
-        height: 33px;
-        left: 393px;
-        letter-spacing: 0px;
-        position: absolute;
-        right: 987px;
-        top: 966px;
-        width: 60px;
+        left: 46.5rem;
     }
 
     .secondary-img {
@@ -403,4 +182,24 @@
         top: 1300px;
         width: 620px;
     }
+
+    ul {
+        margin-top: 5rem;
+        margin-left: 8.5rem;
+        padding-top: 7rem;
+    }
+
+    .btn.btn-primary {
+        left: 3rem;
+    }
+
+    .dropdown,
+    .dropleft,
+    .dropright,
+    .dropup {
+        position: relative;
+        left: 10rem;
+        top: 2rem;
+    }
+
 }

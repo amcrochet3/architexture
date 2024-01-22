@@ -3,10 +3,26 @@
 let currentInfoWindow = null;
 
 async function initMap() {
-    const coords = { lat: 41.6357653112787, lng: -88.5356838 };
+    let coords = { lat: 41.6357653112787, lng: -88.5356838 }; //default coordinates
+
+    const queryParams = new URLSearchParams(window.location.search);
+    const latParam = queryParams.get('lat');
+    const lngParam = queryParams.get('lng');
+
+    if (latParam !== null && lngParam !== null) {
+        const lat = parseFloat(latParam);
+        const lng = parseFloat(lngParam);
+
+        if (!isNaN(lat) && !isNaN(lng)) {
+            coords = { lat: lat, lng: lng };
+        } else {
+            console.error('Invalid lat or lng parameters');
+        }
+    }
+
     const basicMap = new google.maps.Map(document.querySelector('#map'), {
         center: coords,
-        zoom: 3,
+        zoom: latParam !== null && lngParam !== null ? 15 : 3,
     });
 
     let markers = [];
@@ -28,7 +44,7 @@ async function initMap() {
                     map: basicMap,
                     icon: {
                         url: '/static/img/current-location.svg',
-                        scaledSize: new google.maps.Size(20, 20)
+                        scaledSize: new google.maps.Size(30, 30)
                     },
                     title: 'Your Location'
                 });

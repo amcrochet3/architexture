@@ -31,7 +31,7 @@
         <li><a href="/library">library</a></li>
         <li><a href="/map">map</a></li>
         <li><a href="/albums/{{ user.user_id }}">albums</a></li>
-        <li><a href="#">submit</a></li>
+        <li><a href="/submit/{{ user.user_id }}">submit</a></li>
         <li><a href="#">log_out</a></li>
     </ul>
 </nav>
@@ -63,9 +63,59 @@
                     {% endif %}
                     <span>Style:</span> {{ structure.arch_style }}<br>
                 </p>
+                <div class="dropdown">
+                    <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        Add to Album
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        {% for album in albums %}
+                        <form class="add-to-album-form" action="/add_to_album/{{ structure.structure_id }}"
+                            method="POST">
+                            <input type="hidden" name="album-id" value="{{ album.album_id }}">
+                            <button type="submit" class="dropdown-item">{{ album.album_name }}</button>
+                        </form>
+                        {% endfor %}
+                    </div>
+                </div>
             </div>
         </div>
     </div>
     {% endfor %}
 </div>
+
+<script>
+    const currentPath = window.location.pathname;
+    const navLinks = document.querySelectorAll('.navbar a');
+
+    navLinks.forEach(link => {
+        if (link.getAttribute('href') === currentPath) {
+            link.classList.add('active-link');
+        }
+    });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('.add-to-album-form').forEach(function (form) {
+            form.onsubmit = function (event) {
+                event.preventDefault();
+                var actionUrl = form.action;
+                var data = new FormData(form);
+
+                fetch(actionUrl, {
+                    method: 'POST',
+                    body: data
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        alert(data.message);
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        alert('An error occurred while adding to the album.');
+                    });
+            };
+        });
+    });
+</script>
 {% endblock %}

@@ -25,14 +25,13 @@
 
 {% block body %}
 <nav class="navbar">
-    <h1 class="navbar-heading">welcome</h1>
     <hr class="line" size="1" />
     <ul class="navbar-links">
         <li><a href="/dashboard/{{ user.user_id }}">dashboard</a></li>
         <li><a href="/library">library</a></li>
         <li><a href="/map">map</a></li>
         <li><a href="/albums/{{ user.user_id }}">albums</a></li>
-        <li><a href="#">submit</a></li>
+        <li><a href="/submit/{{ user.user_id }}">submit</a></li>
         <li><a href="#">log_out</a></li>
     </ul>
 </nav>
@@ -43,7 +42,15 @@
             <h2 class="panel-title">featured structure</h2>
         </div>
         <div class="panel-body">
+            {% if featured_structure %}
+            <img class="featured-img" src="{{ featured_structure.img_path }}">
+            <h3 class="hero-title">{{ featured_structure.structure_name }}</h3>
+            <p>{{ featured_structure.city }}, {% if state is not none %}{{ featured_structure.state }}{% endif %}, {{
+                featured_structure.country }}</p>
+            {% else %}
             <p class="text-center">No featured structure this week.</p>
+            {% endif %}
+            <button class="btn btn-primary learn-more">Learn More >>></button>
         </div>
     </div>
     <div class="right-panel">
@@ -52,17 +59,44 @@
                 <h2 class="panel-title">approved submissions</h2>
             </div>
             <div class="panel-body">
+                {% for submission in submissions %}
+                {% if submission %}
+                <li>
+                    <a class="text-left mt-2" href="/map?lat={{ submission.user_lat }}&lng={{ submission.user_lng }}">
+                        {{ submission.user_structure_name }}
+                    </a>
+                </li>
+                {% else %}
                 <p class="text-left">You have not submitted any structures yet.</p>
+                {% endif %}
+                {% endfor %}
             </div>
         </div>
         <div class="col-md-12 col-lg-12 panel albums-panel">
             <div class="panel-heading">
-                <h2 class="panel-title">albums</h2>
+                <h2 class="panel-title">recent albums</h2>
             </div>
             <div class="panel-body">
+                {% for album in albums %}
+                {% if albums is not none %}
+                <li><a class="text-left mt-2" href="/album-details/{{ album.album_id }}">{{ album.album_name }}</a></li>
+                {% else %}
                 <p class="text-left">No albums created yet.</p>
+                {% endif %}
+                {% endfor %}
             </div>
         </div>
     </div>
 </div>
+
+<script>
+    const currentPath = window.location.pathname;
+    const navLinks = document.querySelectorAll('.navbar a');
+
+    navLinks.forEach(link => {
+        if (link.getAttribute('href') === currentPath) {
+            link.classList.add('active-link');
+        }
+    });
+</script>
 {% endblock %}
