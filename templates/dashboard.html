@@ -59,17 +59,20 @@
                 <h2 class="panel-title">approved submissions</h2>
             </div>
             <div class="panel-body">
-                {% for submission in submissions %}
-                {% if submission %}
-                <li>
-                    <a class="text-left mt-2" href="/map?lat={{ submission.user_lat }}&lng={{ submission.user_lng }}">
-                        {{ submission.user_structure_name }}
-                    </a>
-                </li>
-                {% else %}
+                {% if submissions|length == 0 %}
                 <p class="text-left">You have not submitted any structures yet.</p>
+                {% else %}
+                <ul>
+                    {% for submission in submissions %}
+                    <li>
+                        <a class="text-left mt-2"
+                            href="/map?lat={{ submission.user_lat }}&lng={{ submission.user_lng }}">
+                            {{ submission.user_structure_name }}
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
                 {% endif %}
-                {% endfor %}
             </div>
         </div>
         <div class="col-md-12 col-lg-12 panel albums-panel">
@@ -77,26 +80,29 @@
                 <h2 class="panel-title">recent albums</h2>
             </div>
             <div class="panel-body">
-                {% for album in albums %}
-                {% if albums is not none %}
-                <li><a class="text-left mt-2" href="/album-details/{{ album.album_id }}">{{ album.album_name }}</a></li>
-                {% else %}
+                {% if albums|length == 0 %}
                 <p class="text-left">No albums created yet.</p>
+                {% else %}
+                <ul>
+                    {% for album in albums %}
+                    <li>
+                        <a class="text-left mt-2" href="/album-details/{{ album.album_id }}">{{ album.album_name }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
                 {% endif %}
-                {% endfor %}
             </div>
         </div>
     </div>
-</div>
 
-<script>
-    const currentPath = window.location.pathname;
-    const navLinks = document.querySelectorAll('.navbar a');
+    <script>
+        const currentPath = window.location.pathname;
+        const navLinks = document.querySelectorAll('.navbar a');
 
-    navLinks.forEach(link => {
-        if (link.getAttribute('href') === currentPath) {
-            link.classList.add('active-link');
-        }
-    });
-</script>
-{% endblock %}
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === currentPath) {
+                link.classList.add('active-link');
+            }
+        });
+    </script>
+    {% endblock %}

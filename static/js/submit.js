@@ -77,6 +77,13 @@ function showMapModal() {
         modal.style.display = 'block';
         modal.classList.add('show');
 
+        const manualEnterButton = document.getElementById('manual-enter');
+        if (manualEnterButton) {
+            manualEnterButton.addEventListener('click', function () {
+                modal.style.display = 'none';
+            });
+        }
+
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function (position) {
                 const userLocation = {

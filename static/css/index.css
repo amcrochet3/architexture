@@ -19,6 +19,15 @@ body {
     padding: 0;
 }
 
+.main::before {
+    background-color: rgba(0, 0, 0, 0.3);
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
 .main {
     background: url(/static/img/VMC-PwC-YMCA-Tower-facade-detail.jpg) center bottom / cover no-repeat;
     background-color: var(--bg-color-type-0);
@@ -27,15 +36,6 @@ body {
     height: 100vh;
     padding: var(--padding-type-0);
     position: relative;
-}
-
-.main::before {
-    background-color: rgba(0, 0, 0, 0.3) !important;
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
 }
 
 .section {
