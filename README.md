@@ -2,7 +2,7 @@
 
 Architexture is a web application designed to explore and showcase architectural structures around the world. This project combines Flask's backend capabilities with front-end technologies to create an interactive and informative platform for architecture enthusiasts. Users can browse a vast library of structures, create personalized albums, and even submit their own architectural discoveries.
 
-## Deployed Site
+## Demo
 
 [Architexture](https://youtu.be/EXBxASj2R_4)
 
